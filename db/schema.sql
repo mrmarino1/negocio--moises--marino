@@ -18,3 +18,11 @@ CREATE TABLE clientes (
     telefono VARCHAR(20),
     email VARCHAR(100) UNIQUE NOT NULL
 );
+
+CREATE TABLE pedidos (
+    id SERIAL PRIMARY KEY,
+    cliente_id INT NOT NULL,
+    fecha DATE NOT NULL,
+    estado VARCHAR(50) NOT NULL,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+);
