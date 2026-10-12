@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pokédex en línea: busca cualquier Pokémon y consulta su tipo, peso, altura y estadísticas.">
+    <title>Pokédex | Buscador de Pokémon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecera">
+        <div class="cabecera__contenido">
+            <div class="logo">
+                <span class="logo__icono" aria-hidden="true"></span>
+                <span class="logo__texto">Poké<strong>dex</strong></span>
+            </div>
+            <nav class="cabecera__nav" aria-label="Principal">
+                <a href="https://pokeapi.co" target="_blank" rel="noopener noreferrer">Acerca de la API</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="principal">
+        <section class="hero">
+            <h1 class="hero__titulo">Descubre el mundo <span>Pokémon</span></h1>
+            <p class="hero__subtitulo">
+                Busca por nombre o número de la Pokédex y conoce al instante sus tipos,
+                medidas y estadísticas base.
+            </p>
+
+            <form class="buscador" id="formBuscar" role="search" autocomplete="off">
+                <label for="inputNombre" class="sr-only">Nombre o número del Pokémon</label>
+                <div class="buscador__campo">
+                    <svg class="buscador__icono" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-3.5-3.5"></path>
+                    </svg>
+                    <input type="text" name="inputNombre" id="inputNombre"
+                        placeholder="Ej. Pikachu, Charizard o 25" required>
+                </div>
+                <button type="submit" id="btnBuscar" class="boton">Buscar</button>
+            </form>
+
+            <div class="sugerencias" aria-label="Sugerencias de búsqueda">
+                <span>Prueba con:</span>
+                <button type="button" class="chip" data-nombre="pikachu">Pikachu</button>
+                <button type="button" class="chip" data-nombre="charizard">Charizard</button>
+                <button type="button" class="chip" data-nombre="mewtwo">Mewtwo</button>
+                <button type="button" class="chip" data-nombre="eevee">Eevee</button>
+            </div>
+        </section>
+
+        <section id="resultado" class="resultado" aria-live="polite"></section>
+    </main>
+
+    <footer class="pie">
+        <p>Datos proporcionados por <a href="https://pokeapi.co" target="_blank" rel="noopener noreferrer">PokéAPI</a>.
+            Proyecto de demostración sin fines comerciales.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
