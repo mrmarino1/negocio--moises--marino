@@ -26,3 +26,13 @@ CREATE TABLE pedidos (
     estado VARCHAR(50) NOT NULL,
     FOREIGN KEY (cliente_id) REFERENCES clientes(id)
 );
+
+CREATE TABLE detalle_pedido (
+    id SERIAL PRIMARY KEY,
+    pedido_id INT NOT NULL,
+    producto_id INT NOT NULL,
+    cantidad INT NOT NULL,
+    precio_unitario NUMERIC(10,2) NOT NULL,
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
+    FOREIGN KEY (producto_id) REFERENCES productos(id)
+);
