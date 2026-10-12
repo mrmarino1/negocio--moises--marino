@@ -16,3 +16,11 @@ INSERT INTO productos (nombre, categoria_id, precio, stock) VALUES
 ('Pepsi 2L', 1, 14.00, 12),
 ('Galletas Oreo', 2, 7.00, 1),
 ('Shampoo', 3, 35.00, 6);
+
+INSERT INTO clientes (nombre, telefono, email) VALUES 
+('Juan Perez', '70012345', 'juan@email.com'),
+('Maria Gomez', '71123456', 'maria@email.com'),
+('Carlos Ruiz', '72234567', 'carlos@email.com'),
+('Ana Torres', '73345678', 'ana@email.com'),
+('Luis Mamani', '74456789', 'luis@email.com'),
+('Sofia Choque', '75567890', 'sofia@email.com');
